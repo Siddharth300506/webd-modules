@@ -98,15 +98,14 @@
     const display = document.getElementById('display');
 
     function appendValue(value) {
-  let limitExceeded = false;
-  if (display.innerText === '0' && !limitExceeded) {
+
+  if (display.innerText === '0') {
     display.innerText = value;
   } 
-  else if (parseInt(display.innerText) >= 100000000) {
+  else if (display.innerText >= 100000000) {
     display.innerText = 'Input Limit Exceeded!';
-    limitExceeded = true; // Set the flag to prevent further inputs
   } 
-  else if (!limitExceeded) {
+  else{
     display.innerText += value;
   }
 
